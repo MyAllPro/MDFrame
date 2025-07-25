@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "4b1cd356-79a4-44e0-9f02-33d9348b5855",
+		"name": "ContactsAPI_EnvironmentPractice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41751470"
+	},
+	"item": [
+		{
+			"name": "Get all contacts Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{vault:contactstoken}}",
+						"type": "text"
+					},
+					{
+						"key": "postman-token",
+						"value": "<calculated when req is sent>",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "postmanRunTime/7.43.0",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip,deflate,br",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep alive",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/contacts",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a user by id Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{vault:contactstoken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/contacts/67a6f0cc40303a00131fc04a",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"contacts",
+						"67a6f0cc40303a00131fc04a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a user Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{vault:contactstoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"firstName\": \"my\",\r\n        \"lastName\": \"APIAutomation\",\r\n        \"birthdate\": \"1990-01-01\",\r\n        \"email\": \"kom123@gmail.com\",\r\n        \"phone\": \"8005599988\",\r\n        \"street1\": \"Main gate\",\r\n        \"street2\": \"Apartment b\",\r\n        \"city\": \"pune\",\r\n        \"stateProvince\": \"mh\",\r\n        \"postalCode\": \"410206\",\r\n        \"country\": \"india\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/contacts",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a user Copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{vault:contactstoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"seleniumtesting\",\r\n    \"lastName\": \"Automation\",\r\n    \"birthdate\": \"1998-01-01\",\r\n    \"email\": \"kotul123@gmail.com\",\r\n    \"phone\": \"8005656588\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/contacts/67a7020d81016d001366fba0",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"contacts",
+						"67a7020d81016d001366fba0"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user get token Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{username}}\",\r\n    \"password\": \"{{pw}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a user Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDg3MWE2NmY2ZDEzYzAwMTM3Y2IzMWEiLCJpYXQiOjE3MzkyMjAzNTV9.i-GdqLpzfxtl1EdURLAD2AVVYSXxp23V1gUNgGkD0hI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/contacts/67aa65dd84708e0013f88f93",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"contacts",
+						"67aa65dd84708e0013f88f93"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

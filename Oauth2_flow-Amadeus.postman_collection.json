@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "688cba53-5594-4908-a9dc-96cd302fc186",
+		"name": "Oauth2_flow-Amadeus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41751470"
+	},
+	"item": [
+		{
+			"name": "1-Get the Access token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "Afm9PYbXLaaAmm3LAeAkYS5GVE9FTHSp",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "VcS4MyRQ9C82tWTG",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test.api.amadeus.com/v1/security/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"test",
+						"api",
+						"amadeus",
+						"com"
+					],
+					"path": [
+						"v1",
+						"security",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2-Get flight details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer iDpe6o0qehUi35Nb84zgWD8FyetR"
+					}
+				],
+				"url": {
+					"raw": "https://test.api.amadeus.com/v1/shopping/flight-destinations?origin=PAR&maxPrice=200",
+					"protocol": "https",
+					"host": [
+						"test",
+						"api",
+						"amadeus",
+						"com"
+					],
+					"path": [
+						"v1",
+						"shopping",
+						"flight-destinations"
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "PAR"
+						},
+						{
+							"key": "maxPrice",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3-GetFlightDetails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c89I5Y1pWLta1NItevzzTf1GSQar"
+					}
+				],
+				"url": {
+					"raw": "https://test.api.amadeus.com/v1/shopping/flight-destinations?origin=PAR&maxPrice=200",
+					"protocol": "https",
+					"host": [
+						"test",
+						"api",
+						"amadeus",
+						"com"
+					],
+					"path": [
+						"v1",
+						"shopping",
+						"flight-destinations"
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "PAR"
+						},
+						{
+							"key": "maxPrice",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4-GetAccessTokenfor spotify",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "1820c5cfb63a48c6bde57fc6ae9b29c8",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "846734fcb9a34d96b38443de2872411b",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://accounts.spotify.com/api/token",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5-GetSpotifyAlbumDetails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQC_P5gf1FvkdLWLVX3agkF3viSg2iX30LI7AbZMEYljp-yYeF0GGaSUSA7nV8ux46yYuYFo0Z-Psf2n71v10ksAHQW0p2OSaYhNdmApBiw0xzfXjFtK6x2DX4dK5bSw9n_SookQlUo"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"albums",
+						"4aawyAB9vmqN3uQ7FjRGTy"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

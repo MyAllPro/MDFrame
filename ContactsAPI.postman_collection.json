@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "aacbb6dd-2cb2-4ec7-8cf1-c273856e5454",
+		"name": "ContactsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41751470"
+	},
+	"item": [
+		{
+			"name": "login user get token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"pm.globals.set(\"variable_key\", \"variable_value\");\r",
+							"const tokenID=response.token;\r",
+							"console.log(tokenID);\r",
+							"pm.collectionVariables.set(\"my tokenId\", tokenID);\r",
+							"//pm means postman go to collection level and creart variable tokenID it will automaticly come in collection level variable."
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"naveenanimation20@gmail.com\",\r\n    \"password\": \"test@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/users/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all contacts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{my tokenId}}",
+						"type": "text"
+					},
+					{
+						"key": "postman-token",
+						"value": "<calculated when req is sent>",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "postmanRunTime/7.43.0",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip,deflate,br",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "keep alive",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/contacts",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a user by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{my tokenId}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/contacts/66ad10e7aa3ea00013dd5f0b",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"contacts",
+						"66ad10e7aa3ea00013dd5f0b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Your valid test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.firstname).to.eql(pm.iterationData.get(\"firstname\"));\r",
+							"    pm.expect(jsonData.lastname).to.eql(pm.iterationData.get(\"lastname\"));\r",
+							"    pm.expect(jsonData.gender).to.eql(pm.iterationData.get(\"gender\"));\r",
+							"    pm.expect(jsonData.status).to.eql(pm.iterationData.get(\"status\"));\r",
+							"    pm.expect(jsonData.city).to.eql(pm.iterationData.get(\"city\"));\r",
+							"\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{my tokenId}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//   \"firstname\":\"{{firstname}}\",\r\n//   \" lastname\":\"{{lastname}}\",\r\n//   \"gender\":\"{{gender}}\",\r\n//   \"status\":\"{{status}}\",\r\n//   \"city\":\"{{city}}\"\r\n// }\r\n\r\n\r\n\r\n\r\n{\r\n        \"firstName\": \"my\",\r\n        \"lastName\": \"APIAutomation\",\r\n        \"birthdate\": \"1990-01-01\",\r\n        \"email\": \"kom123@gmail.com\",\r\n        \"phone\": \"8005599988\",\r\n        \"street1\": \"Main gate\",\r\n        \"street2\": \"Apartment b\",\r\n        \"city\": \"pune\",\r\n        \"stateProvince\": \"mh\",\r\n        \"postalCode\": \"410206\",\r\n        \"country\": \"india\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/contacts",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{my tokenId}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"I have test selenium\",\r\n    \"lastName\": \"Automation\",\r\n    \"birthdate\": \"1991-01-01\",\r\n    \"email\": \"kotul123@gmail.com\",\r\n    \"phone\": \"8005656588\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/contacts/67a7020d81016d001366fba0",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"contacts",
+						"67a7020d81016d001366fba0"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{my tokenId}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/contacts/67aa65dd84708e0013f88f93",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"contacts",
+						"67aa65dd84708e0013f88f93"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://thinking-tester-contact-list.herokuapp.com",
+			"type": "string"
+		},
+		{
+			"key": "my tokenId",
+			"value": ""
+		}
+	]
+}

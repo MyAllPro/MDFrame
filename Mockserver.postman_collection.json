@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "c6d200dc-f9dd-41d0-b751-b92b20561ae5",
+		"name": "Mockserver",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41751470"
+	},
+	"item": [
+		{
+			"name": "users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users"
+					]
+				},
+				"description": "get a fake user"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/players?season=2025",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"players"
+							],
+							"query": [
+								{
+									"key": "season",
+									"value": "2025"
+								}
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 100,\n        \"Pname\": \"Applelaptop\",\n        \"price\": 100000,\n        \"catagory\": \"laptop\",\n        \"seller\": \"xyz\"\n    },\n    {\n        \"id\": 101,\n        \"name\": \"madhuri dhage\",\n        \"email\": \"dhage_dipendra@hodkiewicz.test\",\n        \"gender\": \"female\",\n        \"status\": \"active\"\n    },\n    {\n        \"id\": 102,\n        \"name\": \"madhuri dhage\",\n        \"email\": \"dhage_dipendra@hodkiewicz.test\",\n        \"gender\": \"female\",\n        \"status\": \"active\"\n    },\n    {\n        \"id\": 103,\n        \"name\": \"madhuri dhage\",\n        \"email\": \"dhage_dipendra@hodkiewicz.test\",\n        \"gender\": \"female\",\n        \"status\": \"active\"\n    },\n    {\n        \"id\": 104,\n        \"name\": \"madhuri dhage\",\n        \"email\": \"dhage_dipendra@hodkiewicz.test\",\n        \"gender\": \"female\",\n        \"status\": \"active\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "customers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/customers",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customers"
+					]
+				},
+				"description": "get all customer"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/customers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": " [\n{\n        \"id\": 100,\n        \"name\": \"madhuri dhage\",\n        \"email\": \"dhage_dipendra@hodkiewicz.test\",\n        \"gender\": \"female\",\n        \"status\": \"active\"\n    },\n {\n        \"id\": 100,\n        \"name\": \"madhuri dhage\",\n        \"email\": \"dhage_dipendra@hodkiewicz.test\",\n        \"gender\": \"female\",\n        \"status\": \"active\"\n    },\n {\n        \"id\": 100,\n        \"name\": \"madhuri dhage\",\n        \"email\": \"dhage_dipendra@hodkiewicz.test\",\n        \"gender\": \"female\",\n        \"status\": \"active\"\n    },\n {\n        \"id\": 100,\n        \"name\": \"madhuri dhage\",\n        \"email\": \"dhage_dipendra@hodkiewicz.test\",\n        \"gender\": \"female\",\n        \"status\": \"active\"\n    },\n {\n        \"id\": 100,\n        \"name\": \"madhuri dhage\",\n        \"email\": \"dhage_dipendra@hodkiewicz.test\",\n        \"gender\": \"female\",\n        \"status\": \"active\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/product",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product"
+					]
+				},
+				"description": "create a product"
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n       \"id\": _123,\n        \"Pname\": \"Applelaptop\",\n        \"price\": 100000,\n        \"catagory\": \"laptop\",\n        \"seller\": \"xyz\"\n    }"
+				}
+			]
+		},
+		{
+			"name": "GETAALLcustomers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/customers",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"Pname\": \"MADHURI\",\r\n\"price\": 100000,\r\n\"catagory\": \"laptop\",\r\n\"seller\": \"xyz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/product",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "players",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/players?season=2024",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"players"
+					],
+					"query": [
+						{
+							"key": "season",
+							"value": "2024"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "players",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/players?season=2024",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"players"
+							],
+							"query": [
+								{
+									"key": "season",
+									"value": "2024"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 100,\n        \"Pname\": \"Applelaptop\",\n        \"price\": 100000,\n        \"catagory\": \"laptop\",\n        \"seller\": \"xyz\"\n    },\n    {\n        \"id\": 100,\n        \"name\": \"madhuri dhage\",\n        \"email\": \"dhage_dipendra@hodkiewicz.test\",\n        \"gender\": \"female\",\n        \"status\": \"active\"\n    },\n    {\n        \"id\": 100,\n        \"name\": \"madhuri dhage\",\n        \"email\": \"dhage_dipendra@hodkiewicz.test\",\n        \"gender\": \"female\",\n        \"status\": \"active\"\n    },\n    {\n        \"id\": 100,\n        \"name\": \"madhuri dhage\",\n        \"email\": \"dhage_dipendra@hodkiewicz.test\",\n        \"gender\": \"female\",\n        \"status\": \"active\"\n    },\n    {\n        \"id\": 100,\n        \"name\": \"madhuri dhage\",\n        \"email\": \"dhage_dipendra@hodkiewicz.test\",\n        \"gender\": \"female\",\n        \"status\": \"active\"\n    }\n]"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://3c942d86-6fea-4dbc-bc86-326917618132.mock.pstmn.io"
+		}
+	]
+}

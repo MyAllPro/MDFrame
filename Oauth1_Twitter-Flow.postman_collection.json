@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "91ed9ba9-1106-47b5-841c-2c95c17715cd",
+		"name": "Oauth1_Twitter-Flow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41751470"
+	},
+	"item": [
+		{
+			"name": "1-GetTheRequestToken(temp)",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "callback",
+							"value": "oob",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "JOnV3iUrbpPMbD3YDTDbyrhEkedmfuV1Jwi1NGhXqGNeqeX4qL",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "8ORvRY5WAQbzqKlsTSOYC2haX",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.twitter.com/oauth/request_token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"request_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2-Allow Access/Authorize it",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.twitter.com/oauth/authorize?oauth_token=hF8YygAAAAAB1_S3AAABlwdjje0",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "oauth_token",
+							"value": "hF8YygAAAAAB1_S3AAABlwdjje0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3-Exchange Request Token for access token",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "verifier",
+							"value": "5468358",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "0obTCTjCDlaEnBVSwoYL9QWtaDRFyNx0",
+							"type": "string"
+						},
+						{
+							"key": "callback",
+							"value": "oob",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "JOnV3iUrbpPMbD3YDTDbyrhEkedmfuV1Jwi1NGhXqGNeqeX4qL",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "8ORvRY5WAQbzqKlsTSOYC2haX",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.twitter.com/oauth/request_token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"request_token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
