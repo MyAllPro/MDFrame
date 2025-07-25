@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "b3be3416-7b06-424c-8fe0-229e69dc6777",
+		"name": "GorestCollection_Querry",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41751470"
+	},
+	"item": [
+		{
+			"name": "Get a user querry para",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 08a25231cbd66c01b5a363e0ba6ffbc1b7bc8de997cbdf9c3d93747e8808a668"
+					}
+				],
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/users?name=madhuri",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "madhuri"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "path_para",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ergast.com/api/f1/:year/drivers.json",
+					"protocol": "http",
+					"host": [
+						"ergast",
+						"com"
+					],
+					"path": [
+						"api",
+						"f1",
+						":year",
+						"drivers.json"
+					],
+					"variable": [
+						{
+							"key": "year",
+							"value": "2010"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Naveenautomation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://naveenautomationlabs.com/opencart/index.php/",
+					"protocol": "https",
+					"host": [
+						"naveenautomationlabs",
+						"com"
+					],
+					"path": [
+						"opencart",
+						"index.php",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
